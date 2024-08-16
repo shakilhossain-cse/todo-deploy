@@ -14,7 +14,9 @@ app.use(cors())
 
 // routes
 app.use('/api/v1/book',BookRoute)
-
+app.get('/', (req, res) => {
+    res.send('hello world')
+})
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
